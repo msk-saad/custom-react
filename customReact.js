@@ -28,3 +28,55 @@ const reactElement = {
 
 const mainContainer = document.querySelector('#root');
 customRender(reactElement, mainContainer)
+
+
+
+
+/* 
+
+If we are using react render, using the above reactElement will throw an error,
+as react will expect some sort of syntax that is predefined in react.
+
+the syntax that we can follow is
+
+const reactElement = React.createElement(
+  'a',
+  {href: 'https://www.google.com', target: '_blank'},
+  'Click to visit google'
+);
+
+*/
+
+
+/*
+
+In react just like how we use components { example: <App  /> }. we can also use props/variables or functions
+
+Example:
+
+1- 
+const anotherElement = (
+  <a href = "https://www.google.com" target = "_blank">Click to visit google</a>
+)
+
+
+2-
+function reactElement () {
+  return (
+    <>
+      <h1>Hello world!</h1>
+    </>
+  )
+}
+
+
+--- React-Render method 
+
+ReactDOM.createRoot(document.getElementById('root')).render (
+  reactElement() --> This will work;
+  <reactElement /> --> This will work;
+  <anotherElement /> --> This will work;
+  anotherElement --> This will work
+)
+
+*/
